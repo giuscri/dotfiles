@@ -26,8 +26,8 @@ services:
 script:
 	sudo install -m 755 ./sync.sh $(DEST_BIN)/sync.sh
 	sudo chown -R $(USER):$(GROUP) $(DEST_BIN)/sync.sh
-	sudo install -m 755 ./launch-sync.sh $(DEST_BIN)/launch-sync.sh
-	sudo chown -R $(USER):$(GROUP) $(DEST_BIN)/launch-sync.sh
+	sudo install -m 755 ./Dotfiles $(DEST_BIN)/Dotfiles
+	sudo chown -R $(USER):$(GROUP) $(DEST_BIN)/Dotfiles
 
 config:
 	install -m 644 ./config.yaml $(CONFIG_DIR)/config.yaml
@@ -36,4 +36,4 @@ clean:
 	launchctl unload $(SERVICE_DIR)/com.github.giuscri.dotfiles.plist
 	sudo rm -rf $(LOG_DIR)
 	rm -rf $(CONFIG_DIR)
-	sudo rm -f $(DEST_BIN)/sync.sh $(DEST_BIN)/launch-sync.sh
+	sudo rm -f $(DEST_BIN)/sync.sh $(DEST_BIN)/Dotfiles
