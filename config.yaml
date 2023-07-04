@@ -1,0 +1,11 @@
+s3_bucket_name: com.github.giuscri.dotfiles
+
+paths: # explicit paths to sync
+  - ~/.ssh
+  - ~/.gnupg
+  - ~/.vimrc
+  - ~/.zshrc
+  - ~/.zprofile
+
+# `true` if apps installed using Homebrew (and their configs) must be synched
+formulae: true

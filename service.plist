@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+        <dict>
+                <key>Label</key>
+                <string>com.github.giuscri.dotfiles</string>
+                <key>RunAtLoad</key>
+                <true/>
+                <key>EnvironmentVariables</key>
+                <dict>
+                        <key>PATH</key>
+                        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+                        <!-- Enter the security credentials of an AWS IAM user with s3 read/write permissions. -->
+                        <key>AWS_ACCESS_KEY_ID</key>
+                        <string>XXXX</string>
+                        <key>AWS_SECRET_ACCESS_KEY</key>
+                        <string>XXXX</string>
+                </dict>
+                <key>ProgramArguments</key>
+                <array>
+                        <string>/usr/local/bin/launch-sync.sh</string>
+                </array>
+                <key>StartCalendarInterval</key>
+                <dict>
+                        <key>Hour</key>
+                        <integer>12</integer>
+                        <key>Minute</key>
+                        <integer>0</integer>
+                </dict>
+                <key>StandardOutPath</key>
+                <string>/var/log/com.github.giuscri.dotfiles/stdout.log</string>
+                <key>StandardErrorPath</key>
+                <string>/var/log/com.github.giuscri.dotfiles/stderr.log</string>
+        </dict>
+</plist>
