@@ -14,6 +14,20 @@ resource "aws_s3_bucket" "main" {
   bucket = "com.github.giuscri.dotfiles"
 }
 
+resource "aws_s3_bucket_lifecycle_configuration" "main" {
+  bucket = aws_s3_bucket.main.id
+
+  rule {
+    id      = "Move to Glacier after 1 day"
+    status  = "Enabled"
+
+    transition {
+      days          = 1
+      storage_class = "GLACIER"
+    }
+  }
+}
+
 resource "aws_iam_user" "main" {
   name = "dotfiles"
 }
