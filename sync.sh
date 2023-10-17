@@ -47,7 +47,7 @@ write_to_s3() {
     for path in $PATHS; do
         eval path=$path
         if [ -d "$path" ]; then
-            aws s3 sync --delete "$path" s3://${S3_BUCKET}/$(basename $path)
+            aws s3 sync "$path" s3://${S3_BUCKET}/$(basename $path)
         else
             if [ "$(etag "$(basename "$path")")" = "$(md5sum "$path" | awk '{print $1}')" ]; then
                 continue
