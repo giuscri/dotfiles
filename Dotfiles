@@ -1,3 +1,5 @@
 #!/bin/bash
 
-sync.sh -w -f "${HOME}/Library/Application Support/com.github.giuscri.dotfiles/config.yaml"
+sync.sh -w -f "${HOME}/Library/Application Support/com.github.giuscri.dotfiles/config.yaml" \
+  1> >(ts -m '%d %h %Y %H:%M:%S %Z' >> /var/log/com.github.giuscri.dotfiles/stdout.log) \
+  2> >(ts -m '%d %h %Y %H:%M:%S %Z' >> /var/log/com.github.giuscri.dotfiles/stderr.log)

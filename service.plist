@@ -27,9 +27,5 @@
                         <key>Minute</key>
                         <integer>0</integer>
                 </dict>
-                <key>StandardOutPath</key>
-                <string>/var/log/com.github.giuscri.dotfiles/stdout.log</string>
-                <key>StandardErrorPath</key>
-                <string>/var/log/com.github.giuscri.dotfiles/stderr.log</string>
         </dict>
 </plist>
